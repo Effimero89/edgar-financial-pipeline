@@ -4,8 +4,9 @@
     as_columnstore=false
 ) }}
 
-SELECT DISTINCT
+SELECT
     ROW_NUMBER() OVER (ORDER BY company_name) AS company_key,
     company_name,
-    cik
+    MAX(cik) AS cik
 FROM {{ ref('silver_financials') }}
+GROUP BY company_name

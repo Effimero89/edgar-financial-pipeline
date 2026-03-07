@@ -4,10 +4,11 @@
     as_columnstore=false
 ) }}
 
-SELECT DISTINCT
+SELECT
     ROW_NUMBER() OVER (ORDER BY period_end) AS date_key,
     period_end AS date_value,
-    fiscal_year,
-    fiscal_quarter,
-    period_type
+    MAX(fiscal_year) AS fiscal_year,
+    MAX(fiscal_quarter) AS fiscal_quarter,
+    MAX(period_type) AS period_type
 FROM {{ ref('silver_financials') }}
+GROUP BY period_end
