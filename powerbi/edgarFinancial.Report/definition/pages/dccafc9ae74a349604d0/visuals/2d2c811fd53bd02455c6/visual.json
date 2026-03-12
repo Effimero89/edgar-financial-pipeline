@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "2d2c811fd53bd02455c6",
+  "position": {
+    "x": 620.54711246200611,
+    "y": 246.07902735562311,
+    "z": 0,
+    "height": 280.1215805471125,
+    "width": 280.1215805471125,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dbo_gold fact_financials"
+                        }
+                      },
+                      "Property": "metric_name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(dbo_gold fact_financials.metric_name)",
+              "nativeQueryRef": "Count of metric_name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dbo_gold fact_financials"
+                      }
+                    },
+                    "Property": "metric_name"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f3d46f36d30b67843281",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dbo_gold fact_financials"
+                  }
+                },
+                "Property": "metric_name"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

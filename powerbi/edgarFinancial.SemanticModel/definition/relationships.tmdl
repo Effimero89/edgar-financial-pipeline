@@ -1,0 +1,23 @@
+relationship 7e747bfe-1c16-4a07-b53b-4ddb745ecc7e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dbo_gold dim_date'.date_value
+	toColumn: LocalDateTable_08025c20-fe66-4386-ad89-4c03102ad116.Date
+
+relationship 9103bdf5-b944-4fac-937e-b6ca1a4f6b6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dbo_gold fact_financials'.period_start
+	toColumn: LocalDateTable_ea7d420b-6680-4dcb-aff0-995f72be69b3.Date
+
+relationship 2842137b-2e9e-4e80-8c6a-f48f7b118797
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dbo_gold fact_financials'.filed
+	toColumn: LocalDateTable_0ce83656-1cd2-4d14-9739-4236dd5ed8b2.Date
+
+relationship d573b8bb-cc27-ab97-8670-accc7d52ddc8
+	fromColumn: 'dbo_gold fact_financials'.company_name
+	toColumn: 'dbo_gold dim_company'.company_name
+
+relationship e2925a2b-6112-e189-f9a3-db0f2671c6f7
+	fromColumn: 'dbo_gold fact_financials'.period_end
+	toColumn: 'dbo_gold dim_date'.date_value
+

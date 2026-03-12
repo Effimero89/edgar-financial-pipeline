@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 74
+          },
+          "nodeIndex": "dbo_gold dim_company",
+          "nodeLineageTag": "2f948f0e-96b3-4bba-855b-c81e2e3e1945",
+          "size": {
+            "height": 393,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 250,
+            "y": 217
+          },
+          "nodeIndex": "dbo_gold dim_date",
+          "nodeLineageTag": "ef3af7b5-b68c-401a-9ef4-b9bfdca5b476",
+          "size": {
+            "height": 458,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 0
+          },
+          "nodeIndex": "dbo_gold fact_financials",
+          "nodeLineageTag": "233b3805-753e-41ce-bf17-4cfe6b2e3358",
+          "size": {
+            "height": 522,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

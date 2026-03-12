@@ -1,0 +1,65 @@
+table 'dbo_gold dim_date'
+	lineageTag: ef3af7b5-b68c-401a-9ef4-b9bfdca5b476
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 621d5484-7f9b-4fa4-a0da-13ac4ce4b50a
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_value
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d84fffd2-d2b0-4861-af24-982a26dde487
+		summarizeBy: none
+		sourceColumn: date_value
+
+		variation Variation
+			isDefault
+			relationship: 7e747bfe-1c16-4a07-b53b-4ddb745ecc7e
+			defaultHierarchy: LocalDateTable_08025c20-fe66-4386-ad89-4c03102ad116.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 6869a5f5-b7f5-443c-a11b-619a14d13356
+		summarizeBy: sum
+		sourceColumn: fiscal_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: ab51d638-feb6-45a2-87eb-defdbab8c73a
+		summarizeBy: sum
+		sourceColumn: fiscal_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_type
+		dataType: string
+		lineageTag: 7f03f849-f85f-4f79-9a2e-dfb479cf1e64
+		summarizeBy: none
+		sourceColumn: period_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dbo_gold dim_date' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("sql-edgar-analytics.database.windows.net", "edgar-analytics"),
+				    dbo_gold_dim_date = Source{[Schema="dbo_gold",Item="dim_date"]}[Data]
+				in
+				    dbo_gold_dim_date
+
+	annotation PBI_ResultType = Table
+

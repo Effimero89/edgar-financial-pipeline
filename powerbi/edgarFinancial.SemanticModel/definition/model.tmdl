@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dbo_gold dim_company","dbo_gold dim_date","dbo_gold fact_financials"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'dbo_gold dim_company'
+ref table 'dbo_gold dim_date'
+ref table DateTableTemplate_3d70c892-7688-45e7-9faa-1b2da1516029
+ref table LocalDateTable_08025c20-fe66-4386-ad89-4c03102ad116
+ref table 'dbo_gold fact_financials'
+ref table LocalDateTable_ea7d420b-6680-4dcb-aff0-995f72be69b3
+ref table LocalDateTable_0ce83656-1cd2-4d14-9739-4236dd5ed8b2
+
+ref cultureInfo en-US
+
